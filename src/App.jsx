@@ -20,6 +20,7 @@ import MinLayout from './layout/MinLayout';
 import Cart from './pages/Cart';
 import AddProduct from './admin/pages/AddProduct';
 import ListProducts from './admin/pages/ListProducts';
+import EditProduct from './admin/pages/EditProduct';
 
 function App() {
 
@@ -52,6 +53,9 @@ function App() {
             </ProtectedRoute>} />
             <Route path="admin/add-product" element={<ProtectedRoute requiredRole={['admin']}>
               <AddProduct />
+            </ProtectedRoute>} />
+            <Route path="admin/edit-product/:id" element={<ProtectedRoute requiredRole={['admin']}>
+              <EditProduct />
             </ProtectedRoute>} />
             <Route path="admin/list-products" element={<ProtectedRoute requiredRole={['admin']}>
               <ListProducts />

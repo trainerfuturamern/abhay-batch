@@ -1,12 +1,15 @@
 import { Button, Card, Col } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
-const Product = ({product, setCartItems}) => {
+const Product = ({product}) => {
     // console.log("product-------------->",product);  //{}
+
+
+    const dispatch = useDispatch();
     
     const handleAddToCart = ()=>{
-        setCartItems((prev) => {
-            return prev + 1;
-        });
+        dispatch(addToCart(product));
     }
 
     return (

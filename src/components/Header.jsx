@@ -10,11 +10,13 @@ import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { useSelector } from "react-redux";
 
 
-function Header({ cartItems }) {
+function Header() {
 
   const { isAuthenticated, userLogout } = useContext(AuthContext);
+  const {cartItems} = useSelector((state) => state.cartItems);
 
   const handleLogout = () => {
     userLogout();
@@ -44,7 +46,7 @@ function Header({ cartItems }) {
             <Nav.Link as={Link} to="/cart" className="position-relative">
               <FaBagShopping />
               <span className="cartitem-count">
-                {cartItems}
+                {cartItems.length}
               </span>
             </Nav.Link>
             {isAuthenticated && (

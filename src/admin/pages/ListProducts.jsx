@@ -1,11 +1,25 @@
 import { Col, Container, Image, Row, Table } from 'react-bootstrap'
 import { FaRegEdit } from "react-icons/fa";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { MdDelete } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+import { deleteProduct } from '../../redux/productSlice';
+import { toast } from 'react-toastify';
 
 const ListProducts = () => {
 
   const {products} = useSelector((state) => state.products);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleEditProduct = (productId)=>{
+    navigate(`/admin/edit-product/${productId}`);
+  }
+
+  const handleProductDelete = (productId)=>{
+    dispatch(deleteProduct(productId));
+    toast.success('Product deleted successfully!');
+  }
 
   return (
     <Container className='mt-4'>
@@ -42,10 +56,10 @@ const ListProducts = () => {
             {product.productPrice}
           </td>
           <td>
-            <FaRegEdit/>
+            <FaRegEdit onClick={()=>handleEditProduct(product.id)}/>
           </td>
           <td>
-            <MdDelete />
+            <MdDelete onClick={()=>handleProductDelete(product.id)} />
           </td>
         </tr>
         ))}
