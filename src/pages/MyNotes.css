@@ -1,0 +1,16 @@
+.notes-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(27, 42, 153);
+}
+.notes-container{
+    width: 400px;
+}
+.notes-field{
+    border-radius: 0px;
+}
+.edit-column{
+    width: 30px;
+}

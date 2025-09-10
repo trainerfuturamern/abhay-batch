@@ -1,0 +1,28 @@
+props - corns - Props uni-directional, props drilling 
+Routing - react-router-dom - v6 - Outlet
+Mounting, Un-mounting 
+Link - 
+Class based - Statefull, Function based - Stateless 
+State - {} - immutable 
+Variable - 
+Re-rendering - state update / props / parent component render 
+Hooks - 2019 - 16.8 introduce - useState - state manage , useEffect - side effects - mounting, unmounting, updating
+Storages in browser - Localstorage, session, cookie
+contex - , redux - visually, complex statement 
+Provider - 
+Protected routes - 
+Authentication - Login
+Autherization - Login & permission 
+Outlet 
+Redux - State management tool - store, reducers, actions
+
+View - MVC 
+
+
+{
+    addPRoduct:()=>{
+
+    }
+}
+
+view - action ------> dispatch ----- reducer Fn ------> store --- state update
